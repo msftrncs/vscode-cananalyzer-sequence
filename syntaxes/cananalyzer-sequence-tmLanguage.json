@@ -1,0 +1,42 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "CanAn-Sequence",
+	"patterns": [
+		{
+			"match": ";.*$",
+			"name": "comment.line.semicolon"
+		},
+		{
+			"match": "^\\s*(?i:(t[dr]))\\s+((0[xX]0*\\h{,8}|0+[0-7]{,10}|[1-9]\\d{,8}|[1-3]\\d{,9}|4(?:[01]\\d{,8}|2(?:[0-8]\\d{,7}|9(?:[0-3]\\d{,6}|4(?:[0-8]\\d{,5}|9(?:[0-5]\\d{,4}|6(?:[0-6]\\d{,3}|7(?:[01]\\d{,2}|2(?:[0-8]\\d|9[0-5]))))))))))\\s+(\\g<3>)\\s+(0[xX]0*1?\\h{,7}|0+[1-3]?[0-7]{,9}|[1-9]\\d{,7}|[1-4]\\d{,8}|5(?:[0-2]\\d{,7}|3(?:[0-5]\\d{,6}|6(?:[0-7]\\d{,5}|8(?:[0-6]\\d{,4}|70(?:[0-8]\\d{,2}|9(?:0\\d|1[01])))))))(?=[;\\s]|$)",
+			"name": "statement.transmit",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "variable.parameter.count" },
+				"4": { "name": "constant.numeric.delay" },
+				"5": { "name": "entity.name.class.object-id" }
+			}
+		},
+		{
+			"match": "^\\s*(?i:(w[dr]))\\s+(0[xX]0*1?\\h{,7}|0+[1-3]?[0-7]{,9}|[1-9]\\d{,7}|[1-4]\\d{,8}|5(?:[0-2]\\d{,7}|3(?:[0-5]\\d{,6}|6(?:[0-7]\\d{,5}|8(?:[0-6]\\d{,4}|70(?:[0-8]\\d{,2}|9(?:0\\d|1[01])))))))\\s+(0x0*\\h{,8}|0+[0-7]{,10}|[1-9]\\d{,8}|[1-3]\\d{,9}|4(?:[01]\\d{,8}|2(?:[0-8]\\d{,7}|9(?:[0-3]\\d{,6}|4(?:[0-8]\\d{,5}|9(?:[0-5]\\d{,4}|6(?:[0-6]\\d{,3}|7(?:[01]\\d{,2}|2(?:[0-8]\\d|9[0-5])))))))))(?=[;\\s]|$)",
+			"name": "statement.wait",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric.delay" },
+				"3": { "name": "entity.name.class.object-id" }
+			}
+		},
+		{
+			"match": "^\\s*(?i:(pause))(?:\\b|_)(?!#)\\s*([^;]*)",
+			"name": "statement.pause",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "string.unquoted" }
+			}
+		},
+		{
+			"match": "^.*$",
+			"name": "comment.unrecognized-statement"
+		}
+	],
+	"scopeName": "text.cananalyzer-sequence"
+}
