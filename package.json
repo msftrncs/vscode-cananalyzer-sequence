@@ -2,7 +2,7 @@
      "name": "cananalyzer-sequence",
      "version": "0.0.1",
      "engines": {
-         "vscode": ">=1.25.0"
+         "vscode": "^1.79.0"
      },
      "publisher": "msftrncs",
      "contributes": {
