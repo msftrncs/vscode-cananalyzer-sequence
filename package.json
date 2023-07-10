@@ -1,21 +1,40 @@
 {
-     "name": "cananalyzer-sequence",
-     "version": "0.0.1",
-     "engines": {
-         "vscode": "^1.79.0"
-     },
-     "publisher": "msftrncs",
-     "repository": { "url": "https://github.com/msftrncs/vscode-cananalyzer-sequence" },
-     "contributes": {
-         "languages": [{
-             "id": "cananalyzer-sequence",
-             "aliases": ["CanAn-Sequence"],
-             "extensions": [".prf"]
-         }],
-         "grammars": [{
-             "language": "cananalyzer-sequence",
-             "scopeName": "text.cananalyzer-sequence",
-             "path": "./syntaxes/cananalyzer-sequence-tmLanguage.json"
-         }]
-     }
- }
+    "name": "cananalyzer-sequence",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.79.0"
+    },
+    "publisher": "msftrncs",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/msftrncs/vscode-cananalyzer-sequence"
+    },
+    "keywords": [
+        "IXXAT",
+        "Sequence",
+        "canAnalyser"
+    ],
+	"categories": [
+		"Programming Languages"
+	],
+    "contributes": {
+        "languages": [
+            {
+                "id": "cananalyzer-sequence",
+                "aliases": [
+                    "CanAn-Sequence"
+                ],
+                "extensions": [
+                    ".prf"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "cananalyzer-sequence",
+                "scopeName": "text.cananalyzer-sequence",
+                "path": "./syntaxes/cananalyzer-sequence-tmLanguage.json"
+            }
+        ]
+    }
+}
