@@ -5,6 +5,7 @@
          "vscode": "^1.79.0"
      },
      "publisher": "msftrncs",
+     "repository": { "url": "https://github.com/msftrncs/vscode-cananalyzer-sequence" },
      "contributes": {
          "languages": [{
              "id": "cananalyzer-sequence",
