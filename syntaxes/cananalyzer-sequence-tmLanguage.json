@@ -58,7 +58,7 @@
 					}
 				},
 				{
-					"match": "^\\s*(?i:(pause))(?:\\b|_)(?!#)\\s*([^;]*)",
+					"match": "^\\s*(?i:(pause))(?=\\b|_)(?!#)\\s*([^;]*)",
 					"name": "meta.statement.pause",
 					"captures": {
 						"1": { "name": "keyword.pause" },
