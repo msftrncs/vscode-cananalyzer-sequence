@@ -1,0 +1,31 @@
+A test IXXAT SequenceClient file
+
+tr 1 100 0777 8
+
+wd 0 0x1FF
+
+wd xx 0x1FF ; we're indicating there may be an argument missing
+
+delay 1
+
+delay 0xx1; canAnalyser will ignore this, we're indicating that there might just be a missing, invalid, or extra argument.
+
+delay 0x00000ffffffff fff
+
+delay ; insufficient arguments
+
+repeat 10
+
+    td 1 0x64 0776 1 02 0x3 4 05 0x06 7 8
+
+    wr 500 510
+
+    wr 536870911 4294967295 x x    ;test
+
+endrep
+
+repeat 10 x; we're indicating there may be an argument issue
+
+endrep ; canAnalyser will ignore this, we're indicating mismatched valid REPEAT/ENDREP tokens.
+
+pause_A Test Message ...
